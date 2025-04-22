@@ -21,12 +21,13 @@ export function MobileContainer({ children, className }: MobileContainerProps) {
         "transition-all duration-300",
         // Mobile app styling
         "fixed inset-0 sm:relative",
+        "top-0",
         "sm:h-auto",
         className
       )}
     >
       {/* Mobile status bar - only visible on small screens */}
-      <div className="h-6 bg-primary/90 flex items-center justify-between px-3 text-white text-xs sm:hidden">
+      <div className="h-6 bg-primary flex items-center justify-between px-3 text-white text-xs sm:hidden">
         <div>9:41 AM</div>
         <div className="flex items-center space-x-1">
           <svg
@@ -101,8 +102,9 @@ export function MobileContent({
   return (
     <div
       className={cn(
-        "flex-1 overflow-auto p-4 bg-gray-50",
+        "flex-1 overflow-y-auto p-4 bg-gray-50",
         "overscroll-bounce",
+        "h-[calc(100vh-11rem)]" /* Account for header, status bar, and footer */,
         className
       )}
     >

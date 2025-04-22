@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import {
   SparklesIcon,
   ExclamationTriangleIcon,
@@ -80,6 +81,7 @@ const getTagStyle = (tag: string) =>
   tagColorMapping[tag] || tagColorMapping.Default;
 
 export default function HomePage() {
+  const router = useRouter();
   const [inputText, setInputText] = useState("");
   const [results, setResults] = useState<TaggedTerm[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -224,7 +226,10 @@ export default function HomePage() {
                 </svg>
                 <span className="text-xs font-medium">Home</span>
               </button>
-              <button className="flex flex-col items-center space-y-1 text-gray-500">
+              <button
+                onClick={() => router.push("/about")}
+                className="flex flex-col items-center space-y-1 text-gray-500"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -239,7 +244,10 @@ export default function HomePage() {
                 </svg>
                 <span className="text-xs font-medium">About</span>
               </button>
-              <button className="flex flex-col items-center space-y-1 text-gray-500">
+              <button
+                onClick={() => router.push("/profile")}
+                className="flex flex-col items-center space-y-1 text-gray-500"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
