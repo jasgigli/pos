@@ -19,6 +19,11 @@ import {
 } from "@/components/mobile-container";
 import { ResultsDisplay } from "@/components/results-display";
 import { Logo } from "@/components/logo";
+import { DesktopNav } from "@/components/desktop-nav";
+import { HeroSection } from "@/components/hero-section";
+import { FeaturesSection } from "@/components/features-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { DesktopFooter } from "@/components/desktop-footer";
 
 interface TaggedTerm {
   text: string;
@@ -270,27 +275,45 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 p-4">
-      <Card className="w-full max-w-3xl animate-fade-in">
-        <CardHeader className="text-center space-y-1 pb-0">
-          <div className="flex flex-col items-center justify-center mb-4">
-            <Logo size="lg" className="mb-2" />
-            <div className="h-1 w-16 bg-gradient-to-r from-amber-300/70 to-orange-400/70 rounded-full"></div>
+    <>
+      <DesktopNav />
+      <HeroSection />
+
+      <div id="analyzer-section" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Try Our POS Analyzer
+            </h2>
+            <p className="mt-4 text-xl text-gray-500">
+              Enter any text to identify parts of speech
+            </p>
           </div>
-          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            POS Analyzer
-          </h1>
-          <p className="text-muted-foreground">
-            Identify parts of speech visually
-          </p>
-        </CardHeader>
 
-        <CardContent className="pt-6">{renderContent()}</CardContent>
-      </Card>
+          <div className="max-w-3xl mx-auto">
+            <Card className="w-full animate-fade-in shadow-xl border-0">
+              <CardHeader className="text-center space-y-1 pb-0">
+                <div className="flex flex-col items-center justify-center mb-4">
+                  <Logo size="lg" className="mb-2" />
+                  <div className="h-1 w-16 bg-gradient-to-r from-amber-300/70 to-orange-400/70 rounded-full"></div>
+                </div>
+                <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                  POS Analyzer
+                </h1>
+                <p className="text-muted-foreground text-sm">
+                  Identify parts of speech visually
+                </p>
+              </CardHeader>
 
-      <footer className="mt-8 text-center text-xs text-muted-foreground">
-        <p>Built with ❤️ by Junaid Ali Shah Gigli</p>
-      </footer>
-    </main>
+              <CardContent className="pt-6">{renderContent()}</CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      <FeaturesSection />
+      <TestimonialsSection />
+      <DesktopFooter />
+    </>
   );
 }
