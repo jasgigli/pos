@@ -54,7 +54,7 @@ export async function POST(request: Request) {
     return NextResponse.json<TaggingResponse>({ taggedTerms });
   } catch (error) {
     console.error("POS Tagging API Error:", error);
-    let errorMessage = "Failed to process text.";
+    const errorMessage = "Failed to process text.";
     if (error instanceof Error) {
       // Avoid leaking internal details in production, but log them
       // errorMessage = error.message; // Be cautious about exposing raw error messages
