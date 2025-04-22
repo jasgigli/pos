@@ -27,7 +27,7 @@ export function ResultsDisplay({ results, getTagStyle }: ResultsDisplayProps) {
               key={idx}
               className={cn(
                 "flex items-center justify-between p-4 rounded-lg shadow-sm",
-                "border border-border/50 backdrop-blur-sm",
+                "border border-amber-200/50 backdrop-blur-sm",
                 "transition-all duration-200 hover:shadow-md",
                 "hover:scale-[1.01]"
               )}

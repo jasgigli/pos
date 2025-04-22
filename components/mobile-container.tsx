@@ -10,10 +10,10 @@ interface MobileContainerProps {
 
 export function MobileContainer({ children, className }: MobileContainerProps) {
   return (
-    <div 
+    <div
       className={cn(
         "w-full max-w-md mx-auto overflow-hidden",
-        "sm:rounded-2xl sm:shadow-xl sm:border border-border/50",
+        "sm:rounded-2xl sm:shadow-xl sm:border border-amber-200/50",
         "sm:my-8 sm:max-h-[calc(100vh-4rem)]",
         "md:max-h-[calc(100vh-6rem)]",
         "bg-background",
@@ -27,17 +27,17 @@ export function MobileContainer({ children, className }: MobileContainerProps) {
   );
 }
 
-export function MobileHeader({ 
-  children, 
-  className 
-}: { 
+export function MobileHeader({
+  children,
+  className,
+}: {
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div 
+    <div
       className={cn(
-        "px-4 py-3 border-b border-border/50 bg-muted/30 backdrop-blur-sm",
+        "px-4 py-3 border-b border-amber-200/50 bg-amber-50/30 backdrop-blur-sm",
         "flex items-center justify-between sticky top-0 z-10",
         className
       )}
@@ -47,36 +47,29 @@ export function MobileHeader({
   );
 }
 
-export function MobileContent({ 
-  children, 
-  className 
-}: { 
+export function MobileContent({
+  children,
+  className,
+}: {
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div 
-      className={cn(
-        "flex-1 overflow-auto p-4",
-        className
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("flex-1 overflow-auto p-4", className)}>{children}</div>
   );
 }
 
-export function MobileFooter({ 
-  children, 
-  className 
-}: { 
+export function MobileFooter({
+  children,
+  className,
+}: {
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div 
+    <div
       className={cn(
-        "px-4 py-3 border-t border-border/50 bg-muted/30 backdrop-blur-sm",
+        "px-4 py-3 border-t border-amber-200/50 bg-amber-50/30 backdrop-blur-sm",
         "sticky bottom-0 z-10",
         className
       )}

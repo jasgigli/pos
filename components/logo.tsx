@@ -20,13 +20,13 @@ export function Logo({ size = "md", className }: LogoProps) {
     <div
       className={cn(
         "relative overflow-hidden rounded-full shadow-md",
-        "border border-primary/20 bg-white/90",
+        "border border-amber-400/40 bg-white/90",
         "flex items-center justify-center",
         sizeClasses[size],
         className
       )}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-200/20 to-orange-300/20 z-0"></div>
       <Image
         src="/logo.png"
         alt="POS Analyzer Logo"

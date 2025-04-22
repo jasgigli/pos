@@ -5,11 +5,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #4f46e5;
+  --primary: #d37a14;
   --primary-foreground: #ffffff;
   --secondary: #f3f4f6;
   --secondary-foreground: #1f2937;
-  --accent: #8b5cf6;
+  --accent: #d37a14;
   --accent-foreground: #ffffff;
   --muted: #f3f4f6;
   --muted-foreground: #6b7280;
@@ -17,7 +17,7 @@
   --card-foreground: #171717;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #4f46e5;
+  --ring: #d37a14;
   --radius: 0.5rem;
 }
 

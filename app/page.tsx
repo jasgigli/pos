@@ -35,40 +35,40 @@ interface ErrorResponse {
 
 const tagColorMapping: Record<string, { bg: string; text: string }> = {
   Noun: {
-    bg: "bg-blue-100",
-    text: "text-blue-800",
+    bg: "bg-amber-100",
+    text: "text-amber-800",
   },
   Verb: {
-    bg: "bg-green-100",
-    text: "text-green-800",
+    bg: "bg-orange-100",
+    text: "text-orange-800",
   },
   Adjective: {
     bg: "bg-yellow-100",
     text: "text-yellow-800",
   },
   Adverb: {
-    bg: "bg-purple-100",
-    text: "text-purple-800",
+    bg: "bg-amber-100/80",
+    text: "text-amber-900",
   },
   Preposition: {
-    bg: "bg-pink-100",
-    text: "text-pink-800",
+    bg: "bg-orange-100/80",
+    text: "text-orange-900",
   },
   Conjunction: {
-    bg: "bg-indigo-100",
-    text: "text-indigo-800",
+    bg: "bg-amber-50",
+    text: "text-amber-800",
   },
   Determiner: {
-    bg: "bg-teal-100",
-    text: "text-teal-800",
-  },
-  Value: {
-    bg: "bg-orange-100",
+    bg: "bg-orange-50",
     text: "text-orange-800",
   },
+  Value: {
+    bg: "bg-amber-200",
+    text: "text-amber-800",
+  },
   Default: {
-    bg: "bg-gray-200",
-    text: "text-gray-800",
+    bg: "bg-orange-50",
+    text: "text-orange-800",
   },
 };
 
@@ -144,9 +144,9 @@ export default function HomePage() {
 
       {/* Feedback */}
       {error && (
-        <div className="mt-4 p-4 bg-red-50 rounded-lg flex items-start space-x-2 animate-fade-in">
-          <ExclamationTriangleIcon className="h-6 w-6 text-red-500 flex-shrink-0" />
-          <p className="text-red-700">{error}</p>
+        <div className="mt-4 p-4 bg-orange-50 rounded-lg flex items-start space-x-2 animate-fade-in">
+          <ExclamationTriangleIcon className="h-6 w-6 text-orange-500 flex-shrink-0" />
+          <p className="text-orange-700">{error}</p>
         </div>
       )}
 
@@ -161,7 +161,7 @@ export default function HomePage() {
 
   if (isMobileView) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-0 sm:p-4 flex flex-col items-center justify-center">
+      <main className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 p-0 sm:p-4 flex flex-col items-center justify-center">
         <MobileContainer>
           <MobileHeader>
             <div className="flex items-center space-x-2">
@@ -187,12 +187,12 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 p-4">
       <Card className="w-full max-w-3xl animate-fade-in">
         <CardHeader className="text-center space-y-1 pb-0">
           <div className="flex flex-col items-center justify-center mb-4">
             <Logo size="lg" className="mb-2" />
-            <div className="h-1 w-16 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full"></div>
+            <div className="h-1 w-16 bg-gradient-to-r from-amber-300/70 to-orange-400/70 rounded-full"></div>
           </div>
           <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             POS Analyzer
