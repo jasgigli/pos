@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   SparklesIcon,
@@ -123,8 +123,26 @@ export default function HomePage() {
     [inputText, isLoading]
   );
 
-  // Determine if we should show mobile view
-  const isMobileView = true; // Always use mobile container for better UX
+  // Determine if we should show mobile view based on client-side screen size
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Effect to check screen size on client side
+  useEffect(() => {
+    const checkMobileView = () => {
+      setIsMobileView(window.innerWidth < 640); // 640px is the 'sm' breakpoint in Tailwind
+    };
+
+    // Check on initial render
+    checkMobileView();
+    setIsClient(true);
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkMobileView);
+
+    // Clean up event listener
+    return () => window.removeEventListener("resize", checkMobileView);
+  }, []);
 
   const renderContent = () => (
     <>
@@ -187,6 +205,15 @@ export default function HomePage() {
       )}
     </>
   );
+
+  // Show a minimal loading state before client-side code runs
+  if (!isClient) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Logo size="lg" />
+      </div>
+    );
+  }
 
   if (isMobileView) {
     return (
