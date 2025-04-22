@@ -45,7 +45,8 @@ export function DesktopFooter() {
               <span className="ml-2 text-xl font-bold">POS Analyzer</span>
             </div>
             <p className="mt-4 text-sm text-gray-400">
-              Advanced natural language processing tool for identifying parts of speech in any text.
+              Advanced natural language processing tool for identifying parts of
+              speech in any text.
             </p>
             <div className="mt-6 flex space-x-4">
               {/* Social Media Icons */}
@@ -97,7 +98,7 @@ export function DesktopFooter() {
             &copy; {new Date().getFullYear()} POS Analyzer. All rights reserved.
           </p>
           <p className="mt-4 md:mt-0 text-sm text-gray-400">
-            Built with ❤️ by Junaid Ali Shah Gigli | Government College Peshawar
+            Built with ❤️ by Junaid Ali Shah Gigli
           </p>
         </div>
       </div>
